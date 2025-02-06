@@ -1,0 +1,61 @@
+@font-face {
+  font-family: "Hind Mysuru";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/src/assets/fonts/syk3-yB3k7wiAJ-U5l_li8LChlA.woff2")
+    format("woff2");
+  unicode-range: U+0030-0039, U+003A;
+}
+
+.hind-mysuru-regular {
+  font-family: "Hind Mysuru", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* CurrentTime.css */
+.current-time {
+  position: absolute;
+  top: 6%;
+  left: 46%;
+  transform: rotate(-10deg);
+  color: #8b8b8b;
+  font-size: 48px;
+}
+
+/* 屏幕宽度小于 1024px（平板及小屏设备）时调整 */
+@media (max-width: 1024px) {
+  .current-time {
+    font-size: 48px;
+    top: 2%;
+    left: 46%;
+  }
+}
+
+/* 屏幕宽度小于 768px（平板及小屏设备）时调整 */
+@media (max-width: 768px) {
+  .current-time {
+    font-size: 32px;
+    top: 5%;
+    left: 48%;
+  }
+}
+
+/* 屏幕宽度小于 480px（手机）时调整 */
+@media (max-width: 480px) {
+  .current-time {
+    font-size: 24px;
+    top: 4%;
+    left: 48%;
+  }
+}
+
+/* 屏幕宽度小于 320px（小屏手机）时调整 */
+@media (max-width: 320px) {
+  .current-time {
+    font-size: 18px;
+    top: 4%;
+    left: 45%;
+  }
+}
