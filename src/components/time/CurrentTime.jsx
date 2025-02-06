@@ -1,13 +1,14 @@
 // CurrentTime.jsx
 import { useEffect, useState } from "react";
+import { timestampToTime } from "../../utils/time";
 import "./CurrentTime.css";
 
 function CurrentTime() {
-  const [time, setTime] = useState(new Date().toLocaleTimeString());
+  const [time, setTime] = useState(timestampToTime(new Date().getTime()));
   
   useEffect(() => {
     const interval = setInterval(() => {
-      setTime(new Date().toLocaleTimeString());
+      setTime(timestampToTime(new Date().getTime()));
     }, 1000);
     return () => clearInterval(interval);
   }, []);
