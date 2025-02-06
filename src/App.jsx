@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import ImageOverlay from "./components/ImageOverlay";
 import WorkCalendar from "./components/WorkCalendar";
 import { addEvent, getAllEvents } from "./store/db";

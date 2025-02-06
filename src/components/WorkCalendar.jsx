@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import ActivityCalendar from "react-activity-calendar";
 import { timestampToDateString } from "../utils/time";
 
@@ -124,7 +124,7 @@ function computeCalendarData(year, events) {
     const allocations = allocateSegmentToDays(segment);
     for (const day in allocations) {
       // 解析本地日期字符串
-      const [y, m, d] = day.split("-").map(Number);
+      const [y] = day.split("-").map(Number);
       if (y === year) {
         dailyDurations[day] = (dailyDurations[day] || 0) + allocations[day];
       }
@@ -231,11 +231,14 @@ function ConfirmModal({ message, onConfirm, onCancel }) {
 
 function WorkCalendar({ status }) {
   // 本组件内部维护所有事件的状态（从 IndexedDB 中加载）
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [allEvents, setAllEvents] = useState([]);
   // 默认显示当前年份，用户可通过下拉框切换年份
   const currentYear = new Date().getFullYear();
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [selectedYear, setSelectedYear] = useState(currentYear);
   // 控制自定义确认弹窗
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [confirmModal, setConfirmModal] = useState(null);
 
   // 从 IndexedDB 中获取所有事件
@@ -243,6 +246,7 @@ function WorkCalendar({ status }) {
     getAllEvents().then((events) => setAllEvents(events));
   };
 
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     refreshEvents();
   }, [status]);

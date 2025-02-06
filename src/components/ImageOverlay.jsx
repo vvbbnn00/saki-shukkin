@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const baseWidth = 1380;
 const baseHeight = 780;

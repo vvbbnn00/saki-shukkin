@@ -3,8 +3,6 @@
 function generateAttendanceLogs() {
   const events = [];
   const startYear = 2024;
-  // 设定结束日期为 2025 年 1 月 1 日（不包含）
-  const endYear = 2025;
 
   // 从 2024-01-01 开始
   let currentDate = new Date(`${startYear}-01-01T00:00:00`);
